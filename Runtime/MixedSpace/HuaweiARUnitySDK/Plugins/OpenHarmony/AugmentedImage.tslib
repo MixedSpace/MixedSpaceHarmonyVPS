@@ -1,0 +1,18 @@
+import tuanjie from 'libtuanjie.so';
+
+export function RegisterAugmentedImage(){
+ var register = {};
+ register['ClassAugmentedImage'] = new ClassAugmentedImage();
+ return register;
+}
+
+
+export class ClassAugmentedImage{
+	OnPhotoSelected(path:string):void {
+		tuanjie.TuanjieSendMessage("ExampleController","OnPhotoSelected",path);
+	}
+	
+	OnDBSelected(path:string):void {
+		tuanjie.TuanjieSendMessage("ExampleController","OnDBSelected",path);
+	}
+}

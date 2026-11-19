@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: 7e88a6997da7718429202a9f7f72f9e5
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+  - first:
+      Android: Android
+    second:
+      enabled: 0
+      settings:
+        CPU: ARM64
+  - first:
+      OpenHarmony: OpenHarmony
+    second:
+      enabled: 1
+      settings:
+        CPU: ARM64
+        OpenHarmonySharedLibraryType: Executable
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

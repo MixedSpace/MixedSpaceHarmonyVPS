@@ -1,0 +1,650 @@
+{
+  "date": "2026-11-19",
+  "sdkVersion": "2.0.0",
+  "tuanjieVersion": "1.8.0",
+  "unityVersion": "2022.3.62t2",
+  "referenceCommit": "6a1efcd03169b7b098b46386159e7b4911087db9",
+  "targetPlatform": "OpenHarmony ARM64",
+  "xrlocVersion": "2.3.0",
+  "poseFusionVersion": "1.2.0",
+  "validatedPackageDirectory": "E:\\UnityProject\\harmonyos\\Builds\\OfflineFix-20261119\\MixedSpaceHarmonyPackage",
+  "deliveryPackageDirectory": "E:\\UnityProject\\HongChenVPS\\mixedspace_phone\\MixedSpaceHarmonyPackage",
+  "commonScriptsIdenticalBetweenMainAndStandalone": 95,
+  "mainEditorCompilation": {
+    "success": true,
+    "message": "Command executed successfully",
+    "data": {
+      "isCompiling": false,
+      "errors": 0,
+      "warnings": 1,
+      "success": true
+    }
+  },
+  "cleanProjectCompilation": {
+    "success": true,
+    "message": "Command executed successfully",
+    "data": {
+      "isCompiling": false,
+      "errors": 0,
+      "warnings": 4,
+      "success": true
+    }
+  },
+  "fusionRegression": {
+    "success": true,
+    "nativeVersion": "1.2.0",
+    "checkCount": 51,
+    "checks": [
+      "PoseFusion 1.2 configuration is 28 bytes; bool offset is 24",
+      "Native configuration defaults match SDK 1.2.0",
+      "Localization sample preserves native timestamp alignment",
+      "Configuration rejects invalid angle: -1",
+      "Configuration rejects invalid angle: NaN",
+      "Configuration rejects invalid angle: Infinity",
+      "RunPlan round trip preserves fusion configuration and current Capture options",
+      "Legacy native configuration retains its 20-byte ABI",
+      "Updated Windows native fusion creates a session",
+      "Windows native version can be queried",
+      "Native configuration layout is selected from the actual library version",
+      "Native SetConfig and Reset accept the version-compatible configuration",
+      "Native coordinate conversion succeeds in both directions",
+      "Native coordinate round trip preserves element 0",
+      "Native coordinate round trip preserves element 1",
+      "Native coordinate round trip preserves element 2",
+      "Native coordinate round trip preserves element 3",
+      "Native coordinate round trip preserves element 4",
+      "Native coordinate round trip preserves element 5",
+      "Native coordinate round trip preserves element 6",
+      "Native coordinate round trip preserves element 7",
+      "Native coordinate round trip preserves element 8",
+      "Native coordinate round trip preserves element 9",
+      "Native coordinate round trip preserves element 10",
+      "Native coordinate round trip preserves element 11",
+      "Native coordinate round trip preserves element 12",
+      "Native coordinate round trip preserves element 13",
+      "Native coordinate round trip preserves element 14",
+      "Native coordinate round trip preserves element 15",
+      "Harmony factory selects the updated SDK fusion implementation",
+      "World channel forwards the authored configuration",
+      "Successful native output updates the world and reliability",
+      "Duplicate, backward and too-close tracking samples are skipped",
+      "The exact 60 Hz boundary accepts a fresh tracking sample",
+      "Native failure preserves the last world pose and invalidates reliability",
+      "Failed native submissions still count toward the rate limit",
+      "A persistent tracking loss resets each fusion session once",
+      "A late localization captured at or before tracking loss is rejected",
+      "Fresh localization after recovery restores reliable world output",
+      "Clear removes the managed observation while preserving the native session",
+      "A nonfinite native transform is rejected without moving the world",
+      "Reset failure blocks submissions and output until a later successful reset",
+      "A later successful tracking-loss reset permits recovery",
+      "Tracking loss invalidates output for adapters without an explicit loss source",
+      "Unavailable fusion preserves the world without substituting an unfused localization",
+      "Registry shares one platform sample across worlds and caches existing channels",
+      "Closing a world disposes its independent fusion session",
+      "Registry refreshes its tick snapshot after a channel closes",
+      "The first valid world pose writes the transform",
+      "An identical world pose avoids a repeated transform write",
+      "An external transform change is corrected on the next identical fusion pose"
+    ]
+  },
+  "integrationAndTwoMapBinding": {
+    "success": true,
+    "document": "https://mixedspace.yuque.com/org-wiki-mixedspace-uztekg/lv82og/up5g5kx30dv7tfsq",
+    "checkCount": 23,
+    "checks": [
+      "Official TMP resources satisfy the setup window dependency check",
+      "Configure raises a lower compatible SDK version to API 14",
+      "Configure preserves an existing higher compatible SDK version",
+      "Configure selects OpenHarmony, IL2CPP and ARM64",
+      "Configure disables automatic graphics selection and keeps only OpenGLES3",
+      "Configure preserves existing permission declarations and adds camera, sensor and Internet requirements",
+      "The setup button opens exactly the sample path documented online",
+      "The sample adapter hierarchy matches MixedSpaceSDK/Platform Adapters/HarmonyosSupport",
+      "The sample keeps HarmonyRunPlan, on-device localization and an empty Developer Token",
+      "Application Binding is connected in the documented sample",
+      "The published sample begins with the documented empty XR Space",
+      "A real local .bytes localization map imports into the isolated project",
+      "The documented CreateMapBind menu is registered and executes",
+      "CreateMapBind parents and selects the new binding under XR Space",
+      "Bind Local Asset creates a ready embedded map for the on-device RunPlan",
+      "Map Workspace reports a successful local bind",
+      "Legacy four-digit map IDs are rejected before any cloud request",
+      "The second real local map imports",
+      "Batch binding preserves the first map and adds a second ready map under the same XR Space",
+      "Both map bindings retain the correct embedded datasets",
+      "The map ID restriction is exactly 1000 through 9999",
+      "Production and Test resolve distinct defaults and support an explicit custom service URL",
+      "The configured integration scene saves successfully in the isolated project"
+    ],
+    "savedTestScene": "Assets/DocumentationWorkflow/DocIntegrationScene.unity",
+    "localMapKey": 2074643962,
+    "localMapBytes": 17265848,
+    "mapCount": 2,
+    "planName": "HarmonyRunPlan",
+    "mode": "OnDevice",
+    "cloudServiceRequestsPerformed": false,
+    "deviceRuntimeValidated": false
+  },
+  "sceneAndNativeImporters": {
+    "success": true,
+    "scene": "Assets/DocumentationWorkflow/DocIntegrationScene.unity",
+    "missingScripts": 0,
+    "nativeIssues": [],
+    "native": [
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/HuaweiARUnitySDK/Plugins/OpenHarmony/libpose_fusion.so",
+        "editor": false,
+        "harmony": true
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/Plugins/x86_64/pose_fusion.dll",
+        "editor": true,
+        "harmony": false
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/HuaweiARUnitySDK/Plugins/OpenHarmony/libHwAREngineUnityApi.so",
+        "editor": false,
+        "harmony": true
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/Plugins/x86_64/xrloc.dll",
+        "editor": true,
+        "harmony": false
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/HuaweiARUnitySDK/Plugins/OpenHarmony/AugmentedImage.tslib",
+        "editor": false,
+        "harmony": true
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/AREngineBridge/Plugins/OpenHarmony/libAREngineBridge.so",
+        "editor": false,
+        "harmony": true
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/HuaweiARUnitySDK/Plugins/OpenHarmony/libomp.so",
+        "editor": false,
+        "harmony": true
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/HuaweiARUnitySDK/Plugins/OpenHarmony/libxrloc.so",
+        "editor": false,
+        "harmony": true
+      },
+      {
+        "assetPath": "Packages/com.ningfeng.mixedspace/Runtime/MixedSpace/Plugins/x86_64/opencv_world453.dll",
+        "editor": true,
+        "harmony": false
+      }
+    ]
+  },
+  "setupRepeatedImportRegression": {
+    "success": true,
+    "repeatedExistingSampleImports": 5,
+    "windowsBefore": 0,
+    "windowsAfter": 0,
+    "sceneDirty": false,
+    "batch": false
+  },
+  "openHarmonyExport": {
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 4,
+    "seconds": 64.7826659,
+    "bytes": 159756642,
+    "output": "E:/UnityProject/harmonyos/Builds/SDKParity-20261118/OpenHarmonyExport",
+    "exportProject": true,
+    "il2cpp": true,
+    "arm64": true,
+    "deployedToDevice": false,
+    "errorMessages": []
+  },
+  "exportedNativeIntegrity": {
+    "success": true,
+    "no_windows_dll": true,
+    "il2cpp_generated": true,
+    "native": {
+      "libAREngineBridge.so": {
+        "sha256": "0c0f846165b2fa81305844d0a888127f47e14c1aba94db7489cfdbc6dc3dbf84",
+        "exported_paths": [
+          "tuanjieLib/libs/arm64-v8a/libAREngineBridge.so"
+        ]
+      },
+      "libHwAREngineUnityApi.so": {
+        "sha256": "f8b23d4b027091e7fc3bc51050626a89072fa83784cb0c914ddb722f53997fa4",
+        "exported_paths": [
+          "tuanjieLib/libs/arm64-v8a/libHwAREngineUnityApi.so"
+        ]
+      },
+      "libxrloc.so": {
+        "sha256": "d083e23dffcc1bda6cf90f86d012681c6ea0247cc087ed72c9e72936e95c0ddf",
+        "exported_paths": [
+          "tuanjieLib/libs/arm64-v8a/libxrloc.so"
+        ]
+      },
+      "libpose_fusion.so": {
+        "sha256": "6b30175ab8d4e84423b1460d4328b3f5e8e2190de54ecccb06af2c1ca1834614",
+        "exported_paths": [
+          "tuanjieLib/libs/arm64-v8a/libpose_fusion.so"
+        ]
+      },
+      "libomp.so": {
+        "sha256": "1c105335bf29fcd73f2457aca17dd1c1aac4dc7aafdf4361421ba49495a896a2",
+        "exported_paths": [
+          "tuanjieLib/libs/arm64-v8a/libomp.so"
+        ]
+      }
+    }
+  },
+  "nativeVersionAndTwoResidentMaps": {
+    "xrloc_status": 0,
+    "xrloc_version": [
+      2,
+      3,
+      0
+    ],
+    "has_position_prior": true,
+    "pose_fusion_status": 0,
+    "pose_fusion_version": [
+      1,
+      2,
+      0
+    ],
+    "maps": [
+      {
+        "key": 260776,
+        "bytes": 21829864,
+        "load_status": 0,
+        "point_status": 0,
+        "point_count": 43859,
+        "elapsed_seconds": 0.06
+      },
+      {
+        "key": 260777,
+        "bytes": 17265848,
+        "load_status": 0,
+        "point_status": 0,
+        "point_count": 26882,
+        "elapsed_seconds": 0.041
+      }
+    ],
+    "both_maps_loaded": true
+  },
+  "cleanup": {
+    "deletedFiles": 745,
+    "modifiedFiles": 31,
+    "removedBytes": 319862447,
+    "metadataLineEndingRepairs": 106,
+    "allRepairedGuidsPreserved": true,
+    "networkEnvironmentFollowup": true,
+    "supportedPlayer": "OpenHarmony only",
+    "windowsEditorLibraries": [
+      "xrloc.dll",
+      "opencv_world453.dll",
+      "pose_fusion.dll"
+    ],
+    "removedPlatforms": [
+      "PICO",
+      "Rokid",
+      "XVisio",
+      "ARFoundation",
+      "Android",
+      "iOS",
+      "WSA",
+      "macOS"
+    ],
+    "xrManagementVrAndroidJniDependenciesRemoved": true
+  },
+  "limits": {
+    "deviceRuntimeValidated": false,
+    "newHapInstalled": true,
+    "gpsOnDeviceValidated": false,
+    "offlineAuthorizationOnDeviceValidated": true,
+    "mainEditorRestartRequired": true,
+    "mainEditorLoadedPoseFusion": "1.1.3",
+    "newPackageWindowsPoseFusion": "1.2.0",
+    "buildWarnings": 4,
+    "warningDescription": "Existing Huawei SDK duplicate using directives/unused field and headless editor graphics warnings; no build errors.",
+    "deviceStartupValidated": true,
+    "localizationMatchOnDeviceValidated": true,
+    "fieldTestStatus": "Matched map 260776 on the corrected Harmony app. See the recorded device-check scope.",
+    "latestHapBuildWarnings": 9
+  },
+  "baselineValidationDate": "2026-11-18",
+  "offlineStartupFollowup": {
+    "date": "2026-11-19",
+    "approvedOverlayDiffSha256": "d82a09b9bab1e86f0061993bb72a154de6a781bdf12722a281b1e2f6e0a9da5d",
+    "approvedOfflineRecoveryDiffSha256": "82846d83cd1d0bb3286a8d9747057da6d94da1d7fc669dc0bad5721e51964451",
+    "changes": [
+      "Remove green BackGroundRenderer and cyan SensorDiagnostics OnGUI overlays.",
+      "After native rejection, replace the existing cache from StreamingAssets and verify once more.",
+      "Prepare the camera using CPU image and intrinsics; capture and pose still require valid tracking."
+    ],
+    "mainEditorCompilation": {
+      "success": true,
+      "message": "Command executed successfully",
+      "data": {
+        "isCompiling": false,
+        "errors": 0,
+        "warnings": 6,
+        "success": true
+      }
+    },
+    "isolatedPackageCompilation": {
+      "success": true,
+      "message": "Command executed successfully",
+      "data": {
+        "isCompiling": false,
+        "errors": 0,
+        "warnings": 4,
+        "success": true
+      }
+    },
+    "cacheInstallationRegression": {
+      "success": true,
+      "checkCount": 8,
+      "checks": [
+        "Existing entry point and explicit replacement overload are available",
+        "First install writes the supplied native cache bytes",
+        "Normal installation preserves an existing nonempty cache",
+        "Explicit refresh replaces the rejected nonempty cache",
+        "Successful refresh removes its temporary file",
+        "Empty replacement is rejected and preserves the existing cache",
+        "Normal installation repairs an empty cache",
+        "Explicit refresh also handles a missing destination"
+      ]
+    },
+    "hapBuild": {
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 9,
+      "seconds": 149.4027893,
+      "output": "E:/UnityProject/harmonyos/Builds/OfflineFix-20261119/TestHM-offline-fixed.hap",
+      "bytes": 445054867,
+      "sceneCopy": "Assets/__SdkOfflineRuntimeValidation_20261119/OfflineRuntimeSnapshot.unity",
+      "originalScene": "Assets/Samples/mixedspace/1.0.2/Samples/Scenes/SampleScene.unity",
+      "originalSceneDirtyBefore": false,
+      "originalSceneDirtyAfter": false,
+      "messages": []
+    },
+    "hapPayloadAudit": {
+      "success": true,
+      "hap": "E:\\UnityProject\\harmonyos\\Builds\\OfflineFix-20261119\\TestHM-offline-fixed.hap",
+      "bytes": 211346779,
+      "sha256": "791a7222ff52f911339dcbdc5f4b7825123b40485ba9ac6bfc1a032db3fc04f8",
+      "nativeLibraries": [
+        {
+          "name": "libs/arm64-v8a/libAREngineBridge.so",
+          "bytes": 134680,
+          "sha256": "0c0f846165b2fa81305844d0a888127f47e14c1aba94db7489cfdbc6dc3dbf84"
+        },
+        {
+          "name": "libs/arm64-v8a/libHwAREngineUnityApi.so",
+          "bytes": 504136,
+          "sha256": "f8b23d4b027091e7fc3bc51050626a89072fa83784cb0c914ddb722f53997fa4"
+        },
+        {
+          "name": "libs/arm64-v8a/lib_burst_generated.so",
+          "bytes": 66328,
+          "sha256": "b396962c69945cd5529859328bb319eb2b3d0a0fba020256cd5e375fef32f8ed"
+        },
+        {
+          "name": "libs/arm64-v8a/libc++_shared.so",
+          "bytes": 1262248,
+          "sha256": "b0455e6756bc102afa17b6bbfc934d941bbfb7db4d7d5e74ef453fb770274230"
+        },
+        {
+          "name": "libs/arm64-v8a/libil2cpp.so",
+          "bytes": 47040072,
+          "sha256": "f6a989a928c5e1c818f1cfbeca99923db022ac210603d3649deb855ad6529eb7"
+        },
+        {
+          "name": "libs/arm64-v8a/libomp.so",
+          "bytes": 792000,
+          "sha256": "1c105335bf29fcd73f2457aca17dd1c1aac4dc7aafdf4361421ba49495a896a2"
+        },
+        {
+          "name": "libs/arm64-v8a/libpose_fusion.so",
+          "bytes": 874080,
+          "sha256": "6b30175ab8d4e84423b1460d4328b3f5e8e2190de54ecccb06af2c1ca1834614",
+          "matchesProjectSource": true
+        },
+        {
+          "name": "libs/arm64-v8a/libtuanjie.so",
+          "bytes": 19408328,
+          "sha256": "2443f7e50ae28e719453ff85021f4a0af3ca93b4ee34fab8c13707645bf26357"
+        },
+        {
+          "name": "libs/arm64-v8a/libxrloc.so",
+          "bytes": 87796744,
+          "sha256": "d083e23dffcc1bda6cf90f86d012681c6ea0247cc087ed72c9e72936e95c0ddf",
+          "matchesProjectSource": true
+        }
+      ],
+      "bundledNativeIssuedCache": {
+        "count": 1,
+        "bytes": 201,
+        "matchesFreshEditorExport": true
+      },
+      "moduleJsonEntries": [
+        "module.json"
+      ]
+    },
+    "deviceValidation": {
+      "date": "2026-11-19",
+      "appInstalled": true,
+      "previouslyRejectedCacheRestoredExactly": true,
+      "cacheChangedDuringStartup": true,
+      "networkUnreachableBeforeAndAfter": true,
+      "startupProceededToMapImportAndCameraStart": true,
+      "greenAndCyanScreenOverlaysRemoved": true,
+      "successfulLocalizationObserved": false,
+      "fieldTestStatus": "Deferred at user request; test in the mapped area later.",
+      "gpsOnDeviceValidated": false
+    },
+    "packageIntegrityBeforeDocumentationUpdate": {
+      "commonScriptCounts": [
+        95,
+        95
+      ],
+      "commonScriptFilesEqual": true,
+      "commonScriptMismatch": [],
+      "stagedAndCanonicalCounts": [
+        582,
+        582
+      ],
+      "stagedFilesEqual": true,
+      "stagedMismatch": [],
+      "malformedMeta": [],
+      "privateRuntimeAssets": [],
+      "overlaysRemoved": true,
+      "commonScriptLineEndingOnlyDifferences": [
+        "Architecture/IMixedSpaceNetworkEnvironment.cs"
+      ]
+    }
+  },
+  "sampleMapBindingFollowup": {
+    "date": "2026-11-19",
+    "approvedDiffSha256": "912964af45320c2103e1f68743b9f4ab95b00f5d592a66f9828de30c73e5bdb0",
+    "sceneGuidPreserved": true,
+    "defaultMapBindingCount": 1,
+    "templateMapKey": -1,
+    "templateContainsMapPayload": false,
+    "regression": {
+      "success": true,
+      "date": "2026-11-19",
+      "unityVersion": "2022.3.62t2",
+      "checkCount": 23,
+      "checks": [
+        "Dedicated editor loads the corrected standalone package",
+        "Validation project still targets OpenHarmony",
+        "The loaded standalone editor assembly contains the approved empty-binding reuse fix",
+        "Package Manager reimports the corrected HarmonyAdapter sample successfully",
+        "Imported sample keeps its original scene GUID and resolves into Assets/Samples",
+        "Reimported sample has no missing scripts",
+        "Sample preserves platform and OnDevice RunPlan references and ships an empty Token",
+        "Freshly imported XR Space contains exactly one active Map Binding child",
+        "Default binding is an unconfigured placeholder with no map payload or preview and an identity transform",
+        "Default binding resolves the existing MixedSpaceMapBinding script GUID",
+        "Restoring the map node preserves CanvasScaler adaptation",
+        "Two real local maps are available only in the isolated validation project",
+        "Bind Local Asset configures the shipped placeholder directly and creates no extra node",
+        "Single-map undo restores the placeholder, metadata and original object name",
+        "Single-map redo restores the map data and object name",
+        "Batch binding two maps leaves exactly two ready bindings and no incomplete placeholder",
+        "Batch binding reuses the original node for the first map and retains both distinct datasets",
+        "Batch undo removes the added node and restores the reused node including its name and declaration",
+        "Batch redo restores both ready map bindings and their datasets",
+        "Duplicate map validation still rejects the request before changing configured bindings",
+        "Editor-only binding tests did not save test maps into the published sample scene",
+        "Batch binding from Project selection also reuses the sample placeholder when Target Binding is unset",
+        "The on-disk imported example remains an unconfigured template without private test-map references"
+      ],
+      "samplePath": "Assets/Samples/MixedSpace Harmony SDK/2.0.0/HarmonyAdapter/Scenes/SampleScene.unity",
+      "importUsedPackageManagerApi": true,
+      "defaultBindingCount": 1,
+      "batchMapCount": 2,
+      "productionScenesModified": false,
+      "privateMapsAddedToSdk": false,
+      "error": null,
+      "stack": null
+    },
+    "standaloneEditorCompilation": {
+      "success": true,
+      "message": "Command executed successfully",
+      "data": {
+        "isCompiling": false,
+        "errors": 0,
+        "warnings": 1,
+        "success": true
+      }
+    },
+    "mainLoadedEditorFix": {
+      "mainEditor": 41536,
+      "guardReleased": true,
+      "compiledBatchUsesQueue": true,
+      "sampleType": "UnityEditor.PackageManager.UI.Sample, UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "sampleApi": [
+        "System.Collections.Generic.IEnumerable`1[UnityEditor.PackageManager.UI.Sample] FindByPackage(System.String, System.String)",
+        "Boolean Import(ImportOptions)"
+      ],
+      "sampleOptions": [
+        "None",
+        "OverridePreviousImports",
+        "HideImportWindow"
+      ]
+    },
+    "openHarmonyPlayerScriptCompilation": {
+      "success": true,
+      "target": "OpenHarmony",
+      "errors": [],
+      "assemblies": [
+        "AREngineBridge.Glue",
+        "AREngineBridge.Runtime",
+        "HuaweiARUnitySDK",
+        "MixedSpace.Core",
+        "Unity.AI.Navigation",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+      ]
+    },
+    "sourceIntegrity": {
+      "approvedFilesStillMatch": true,
+      "sceneMetaPreserved": true,
+      "sourceSceneUnmodified": true,
+      "stagedCopyMatchesCurrentDirectory": true,
+      "fileCount": 582
+    },
+    "preexistingRuntimeChangesPreservedWithoutEditing": [
+      {
+        "file": "Runtime/Scripts/Architecture/MixedSpaceCameraAcquisition.cs",
+        "modified": 1795052834.7995055,
+        "sha256": "cd7d69b0bc5aef0584fd9db27702609ac4d376f9dca983cc6a4767048bb412cd"
+      }
+    ],
+    "currentMainAndStandaloneRuntimeTextComparison": {
+      "checkedFiles": 95,
+      "matchingFiles": 94,
+      "differentFiles": [
+        "Architecture/MixedSpaceCameraAcquisition.cs"
+      ],
+      "note": "Differences listed here predate this approved scene/editor fix; they were preserved."
+    },
+    "fieldLocalizationTest": "Deferred at user request; this update validates sample import and binding."
+  },
+  "harmonyLocalizationImageAngleFollowup": {
+    "date": "2026-11-19",
+    "approvedDiffSha256": "889821c5a1c1fd7ed38f36e05affa9d2d2971db9458d673304eb535f6e66f26c",
+    "adapter": "AREnginePlatformSupport.GetCameraData",
+    "nativeImageRotationAngle": 0,
+    "frameReplay": {
+      "library": "Windows XRLoc 2.3.0",
+      "mapId": 260776,
+      "frames": 11,
+      "matchesByAngle": {
+        "270": 0,
+        "0": 9
+      },
+      "rotationPriorRetained": true
+    },
+    "priorDeviceRun": {
+      "mapId": 260776,
+      "nativeAttempts": 11,
+      "laterCaptureCyclesWithoutFrame": 16
+    },
+    "signedHapBuild": {
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 0,
+      "timeSeconds": 75.33533729999999,
+      "output": "E:/UnityProject/harmonyos/Builds/LocalizationAngleFix-20261119/HMVPSTest-angle-fixed.hap",
+      "fileBytes": 200868123,
+      "patchedAngleCompiled": true,
+      "scene": "Assets/Samples/MixedSpace Harmony SDK/2.0.0/HarmonyAdapter/Scenes/SampleScene.unity",
+      "mapId": 260776,
+      "originalSceneDirtyAfter": false,
+      "messages": []
+    },
+    "deviceVerification": {
+      "installedFixedHap": true,
+      "startupChecked": true,
+      "confirmedNativeMapMatch": true,
+      "testedMapId": 260776,
+      "onDeviceMode": true,
+      "testServerNetworkUnreachable": true,
+      "capturedFrames": 30,
+      "allCapturesCarryZeroNativeAngle": true,
+      "matchedObservationsFor260776": 7,
+      "passedElevenAttempts": true,
+      "continuedAfterTrackingRecovery": true,
+      "framesAfterTrackingRecovery": 22,
+      "matchesAfterTrackingRecovery": 4,
+      "trackingTransitions": [
+        {
+          "tracking": false,
+          "seconds": 2.36
+        },
+        {
+          "tracking": true,
+          "seconds": 121.58
+        },
+        {
+          "tracking": false,
+          "seconds": 137.55
+        },
+        {
+          "tracking": true,
+          "seconds": 139.75
+        },
+        {
+          "tracking": false,
+          "seconds": 185.31
+        }
+      ],
+      "worldAppliedPoseRecords": 1334,
+      "releaseValidationSummaryZh": "真机对地图 260776 的 30 次定位中命中 7 次，确认计数超过 11，跟踪恢复后重新取帧并继续定位。"
+    },
+    "testProjectInputsPreserved": true
+  }
+}

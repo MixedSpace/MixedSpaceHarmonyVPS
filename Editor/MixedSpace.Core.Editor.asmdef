@@ -1,0 +1,19 @@
+{
+    "name": "MixedSpace.Core.Editor",
+    "rootNamespace": "",
+    "references": [
+        "MixedSpace.Core",
+        "Unity.EditorCoroutines.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,18 @@
+{
+    "name": "AREngineBridge.Glue",
+    "rootNamespace": "AREngineGlue",
+    "references": [
+        "AREngineBridge.Runtime",
+        "HuaweiARUnitySDK",
+        "MixedSpace.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

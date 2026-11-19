@@ -1,0 +1,132 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using MixedSpace.ServiceContracts;
+using MixedSpace.XR;
+
+namespace MixedSpace.REST
+{
+    /// <summary>
+    /// REST implementation of the application cloud workspace. This adapter is
+    /// the only layer that translates MixedSpace domain values to endpoint DTOs.
+    /// </summary>
+    internal sealed class MixedSpaceCloudWorkspace : IMixedSpaceCloudWorkspace
+    {
+        private readonly IMixedSpaceCloudContext m_Context;
+
+        public MixedSpaceCloudWorkspace(IMixedSpaceCloudContext context)
+        {
+            m_Context = context ?? throw new ArgumentNullException(nameof(context));
+        }
+
+        public async Task<IReadOnlyList<MixedSpaceCloudMapSummary>> FindLoadableMapsAsync(
+            MixedSpaceCloudMapSearch search = null,
+            IProgress<float> progress = null,
+            CancellationToken cancellationToken = default)
+        {
+            search ??= MixedSpaceCloudMapSearch.AllAccessible();
+            SDKJobsResult result;
+            string token = search.Authenticate ? m_Context.DeveloperToken : string.Empty;
+            if (search.UseGeographicFilter)
+            {
+                var request = new SDKGeoJobsRequest
+                {
+                    token = token,
+                    latitude = search.Latitude,
+                    longitude = search.Longitude,
+                    radius = search.Radius
+                };
+                result = await m_Context.Client.PostAsync<SDKGeoJobsRequest, SDKJobsResult>(
+                    request,
+                    progress,
+                    cancellationToken,
+                    m_Context.LocalizationServer);
+            }
+            else
+            {
+                var request = new SDKJobsRequest { token = token };
+                result = await m_Context.Client.PostAsync<SDKJobsRequest, SDKJobsResult>(
+                    request,
+                    progress,
+                    cancellationToken,
+                    m_Context.LocalizationServer);
+            }
+
+            EnsureSuccess("map directory", result.error);
+            if (result.jobs == null)
+                return Array.Empty<MixedSpaceCloudMapSummary>();
+
+            return result.jobs
+                .Where(job =>
+                    !MixedSpaceMapDefinition.IsRetiredKey(job.id) &&
+                    job.type != (int)SDKJobType.Alignment &&
+                    (job.status == SDKJobState.Sparse || job.status == SDKJobState.Done))
+                .Select(job => new MixedSpaceCloudMapSummary(job.id, job.name))
+                .ToArray();
+        }
+
+        public async Task<MixedSpaceCloudMapDescriptor> DescribeMapAsync(
+            int mapKey,
+            IProgress<float> progress = null,
+            CancellationToken cancellationToken = default)
+        {
+            if (mapKey <= 0)
+                throw new ArgumentOutOfRangeException(nameof(mapKey), "Map key must be positive.");
+
+            if (MixedSpaceMapDefinition.IsRetiredKey(mapKey))
+                throw new ArgumentOutOfRangeException(nameof(mapKey), mapKey, "Four-digit maps are retired.");
+
+            var request = new SDKMapMetadataGetRequest
+            {
+                token = m_Context.DeveloperToken,
+                id = mapKey
+            };
+            SDKMapMetadataGetResult result = await m_Context.Client
+                .PostAsync<SDKMapMetadataGetRequest, SDKMapMetadataGetResult>(
+                    request,
+                    progress,
+                    cancellationToken,
+                    m_Context.LocalizationServer);
+            EnsureSuccess("map description", result.error);
+            return MixedSpaceCloudMapRecordAdapter.ToDomain(result);
+        }
+
+        public async Task<MixedSpaceCloudMapReceipt> UploadMapAsync(
+            MixedSpaceCloudMapUpload upload,
+            IProgress<float> progress = null,
+            CancellationToken cancellationToken = default)
+        {
+            if (upload == null)
+                throw new ArgumentNullException(nameof(upload));
+
+            byte[] payload = upload.CopyPayload();
+            if (MixedSpaceMapDefinition.HasLegacyHeader(payload))
+                throw new ArgumentException("Legacy map containers are retired. Upload an XrLoc map.", nameof(upload));
+
+            var request = new SDKMapUploadRequest
+            {
+                token = m_Context.DeveloperToken,
+                name = upload.Label,
+                latitude = upload.Latitude,
+                longitude = upload.Longitude,
+                altitude = upload.Altitude
+            };
+            SDKMapUploadResult result = await m_Context.Client
+                .UploadAsync<SDKMapUploadRequest, SDKMapUploadResult>(
+                    request,
+                    payload,
+                    progress,
+                    cancellationToken);
+            EnsureSuccess("map upload", result.error);
+            return new MixedSpaceCloudMapReceipt(result.id);
+        }
+
+        private static void EnsureSuccess(string operation, string error)
+        {
+            if (!string.Equals(error, "none", StringComparison.OrdinalIgnoreCase))
+                throw new MixedSpaceCloudException(operation, error);
+        }
+    }
+}

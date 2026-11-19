@@ -1,0 +1,18 @@
+{
+    "name": "HuaweiARUnitySDK",
+    "rootNamespace": "HuaweiARUnitySDK",
+    "references": [
+        "AREngineBridge.Runtime",
+        "MixedSpace.Core",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

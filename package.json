@@ -1,0 +1,41 @@
+{
+  "name": "com.njyjxr.mixedspaceharmony",
+  "version": "2.0.0",
+  "displayName": "MixedSpaceHarmonyVPS",
+  "description": "MixedSpace SDK for HarmonyOS using the existing AR Engine bridge. Requires Tuanjie 1.8.0 (2022.3.62t2) with OpenHarmony build support.",
+  "unity": "2022.3",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MixedSpace/MixedSpaceHarmonyVPS.git"
+  },
+  "documentationUrl": "https://github.com/MixedSpace/MixedSpaceHarmonyVPS#readme",
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.9",
+    "com.unity.ugui": "1.0.0",
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.ai.navigation": "1.1.6",
+    "com.unity.editorcoroutines": "1.0.1",
+    "com.unity.modules.ai": "1.0.0",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.physics": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.modules.ui": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0"
+  },
+  "keywords": [
+    "mixedspace",
+    "harmonyos"
+  ],
+  "author": {
+    "name": "mixedspace"
+  },
+  "samples": [
+    {
+      "displayName": "HarmonyAdapter",
+      "description": "Lightweight HarmonyOS setup sample using shared SDK prefabs with an unconfigured Map Binding under XR Space. Import TMP Essential Resources from the Harmony setup window if needed.",
+      "path": "HarmonyAdapter~"
+    }
+  ]
+}

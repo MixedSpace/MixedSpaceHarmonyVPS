@@ -1,0 +1,12 @@
+/.codex/
+/.codex.meta
+/.agents/
+/.agents.meta
+**/.idea/
+**/.idea.meta
+**/.DS_Store
+**/._*
+/*.tgz
+/*.tgz.meta
+/*.zip
+/*.zip.meta
